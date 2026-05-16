@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# env
+.env
+
+# build
+dist/
+build/
+
+# logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Java
+target/
+
+# IntelliJ
+*.iml
