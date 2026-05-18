@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
@@ -11,15 +11,23 @@ import "leaflet/dist/leaflet.css";
 function App() {
   return (
     <>
-      <Navbar /> {/* ✅ OUTSIDE Routes */}
+      <Navbar />
 
       <Routes>
+
+        {/* ✅ Default Route */}
+        <Route
+          path="/"
+          element={<Navigate to="/login" />}
+        />
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/events" element={<EventsList />} />
-       <Route path="/dashboard" element={<UserDashboard />} />
-      <Route path="/my-bookings" element={<MyBookings />} />
-    <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+
       </Routes>
     </>
   );
